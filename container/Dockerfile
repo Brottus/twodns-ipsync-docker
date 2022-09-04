@@ -2,7 +2,7 @@ FROM alpine:3.16
 
 LABEL author="https://github.com/Brottus/twodns-ipsync-docker/tree/main" version="1.0"
 
-ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=false
+ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=false sleeptimer=2160
 
 RUN apk add --no-cache bash curl moreutils
 
@@ -11,8 +11,6 @@ RUN addgroup -S ipsync && adduser -S ipsync -G ipsync
 COPY --chown=ipsync:ipsync ipsync.sh /app/
 
 WORKDIR /app
-
-RUN chmod 755 ipsync.sh
 
 #RUN chown -R ipsync:ipsync /app
 
