@@ -8,7 +8,7 @@ RUN apk add --no-cache bash curl moreutils
 
 RUN addgroup -S ipsync && adduser -S ipsync -G ipsync
 
-COPY --chown=ipsync:ipsync ipsync.sh /app/
+COPY --chown=ipsync:ipsync ipsync.sh in /app/
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ WORKDIR /app
 
 USER ipsync
 
-CMD ["ipsync.sh"]
+CMD ["./ipsync.sh"]
 
 HEALTHCHECK --interval=60m --timeout=3s \
   CMD if pidof -x "ipsync.sh" >/dev/null; then exit 0 else exit 1 fi
