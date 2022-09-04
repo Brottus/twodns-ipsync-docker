@@ -31,7 +31,7 @@ fi
 while true
 do
     echo "timestamp" | ts '[%Y-%m-%d %H:%M:%S]'
-    for domain in "${doamins[@]}"; do
+    for domain in "${domains[@]}"; do
     curl --fail-with-body -X PUT -u $username:$api_key -d '{"ip_address": "$ip_address", "ttl": "$ttl", "activate_wildcard": "$activate_wildcard"}' https://api.twodns.de/hosts/$domain
     retVal=$?
     if [ $retVal -ne 0 ]; then
