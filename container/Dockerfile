@@ -6,13 +6,13 @@ ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=fal
 
 RUN apk add --no-cache bash curl moreutils
 
-COPY ./ipsync.sh in /app
+RUN groupadd -r ipsync && useradd -g ipsync ipsync
+
+COPY --chown=ipsync:ipsync ipsync.sh in /app
 
 WORKDIR /app
 
-RUN groupadd -r ipsync && useradd -g ipsync ipsync
-
-RUN chown -R ipsync:ipsync /app
+#RUN chown -R ipsync:ipsync /app
 
 USER ipsync
 
