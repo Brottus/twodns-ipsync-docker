@@ -4,7 +4,7 @@ LABEL author="https://github.com/Brottus/twodns-ipsync-docker/tree/main" version
 
 ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=false
 
-/bin/sh -c apk add --no-cache bash curl moreutils
+RUN /bin/sh -c apk add --no-cache bash curl moreutils
 
 COPY ./ipsync in /app
 
