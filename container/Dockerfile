@@ -6,7 +6,7 @@ ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=fal
 
 RUN apk add --no-cache bash curl moreutils
 
-COPY ./ipsync in /app
+COPY ./ipsync.sh in /app
 
 WORKDIR /app
 
