@@ -8,9 +8,7 @@ RUN apk add --no-cache bash curl moreutils
 
 RUN addgroup -S ipsync && adduser -S ipsync -G ipsync
 
-RUN mkdir /app
-
-COPY --chown=ipsync:ipsync ipsync.sh in /app
+COPY --chown=ipsync:ipsync ./ipsync.sh in /app
 
 WORKDIR /app
 
