@@ -12,6 +12,8 @@ COPY --chown=ipsync:ipsync ipsync.sh /app/
 
 WORKDIR /app
 
+RUN chmod 755 ipsync.sh
+
 #RUN chown -R ipsync:ipsync /app
 
 USER ipsync
