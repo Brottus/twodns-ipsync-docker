@@ -6,6 +6,7 @@ domains=($domains)
 ip_address=$ip_address
 ttl=$ttl
 activate_wildcard=$activate_wildcard
+sleeptimer=$sleeptimer
 
 if [ -z "$username" || -z "$api_key" ]; then
   echo 'Your Username/Email address and apikey need to be set by env variables username and api_key'
@@ -27,6 +28,10 @@ fi
 #if [ -z "$activate_wildcardl" ]; then
 #  $activate_wildcard="false"
 #fi
+#
+#if [ -z "$sleeptimer" ]; then
+#  $sleeptimer=2160
+#fi
 
 while true
 do
@@ -38,4 +43,6 @@ do
     exit 1
     fi
     done
+    echo "sleep for $sleeptimer" | ts '[%Y-%m-%d %H:%M:%S]'
+    sleep $sleeptimer 
 done
