@@ -8,7 +8,7 @@ ttl=$ttl
 activate_wildcard=$activate_wildcard
 sleeptimer=$sleeptimer
 
-if [ test -z "$username" ]; then
+if [ test -z "$username" || -z "$api_key" ]; then
   echo 'Your Username/Email address and apikey need to be set by env variables username and api_key'
   exit 1
 fi
