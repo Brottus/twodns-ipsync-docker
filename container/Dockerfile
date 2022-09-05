@@ -1,6 +1,6 @@
 FROM alpine:3.16
 
-LABEL author="https://github.com/Brottus/twodns-ipsync-docker/tree/main" version="1.0"
+LABEL author="https://github.com/Brottus/twodns-ipsync-docker" version="1.0"
 
 ENV username= api_key= domains=all ip_address=auto ttl=300 activate_wildcard=false sleeptimer=2160
 
