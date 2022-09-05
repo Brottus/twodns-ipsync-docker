@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# https://github.com/Brottus/twodns-ipsync-docker
+# http://creativecommons.org/licenses/by-sa/4.0/
+
 username=$username
 api_key=$api_key
 domains=($domains)
