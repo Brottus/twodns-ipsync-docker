@@ -20,5 +20,5 @@ USER ipsync
 
 CMD ["./ipsync.sh"]
 
-HEALTHCHECK --interval=60m --timeout=3s \
+HEALTHCHECK --interval=3s --timeout=3s \
   CMD if pidof -x "ipsync.sh" >/dev/null; then exit 0 else exit 1 fi
